@@ -1,0 +1,415 @@
+/* ============================================================
+   TRANSPARENT LUXURY NAVBAR — SHIVPARVATI APARTMENTS
+   Matches brand visual style: transparent overlay over hero,
+   crisp white typography, animated gold hover underlines,
+   pill action buttons, and zero overflow.
+   ============================================================ */
+
+/* 1. Global Page Layout & Anchors */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+body.menu-open {
+  overflow: hidden !important;
+}
+
+/* 2. Header Container (Transparent with Subtle Top Vignette) */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(7, 12, 24, 0.85) 0%, rgba(7, 12, 24, 0.4) 65%, transparent 100%);
+  color: #ffffff;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease, padding 0.3s ease;
+}
+
+/* Scrolled State: Sleek Dark Glassmorphism */
+.header.scrolled {
+  background: rgba(16, 25, 46, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 clamp(16px, 2.5vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 76px;
+  box-sizing: border-box;
+  transition: height 0.3s ease;
+}
+
+.header.scrolled .nav-container {
+  height: 68px;
+}
+
+/* 3. Logo Block */
+.logo-block {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logo-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  background: #C9A84C;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(201, 168, 76, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.logo-block:hover .logo-badge {
+  transform: scale(1.05);
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  white-space: nowrap;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo-tagline {
+  font-size: 9.5px;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #C9A84C;
+  margin-top: 3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* 4. Desktop Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.1vw, 22px);
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  position: relative;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(11px, 0.78vw, 12.5px);
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+  transition: color 0.2s ease;
+  cursor: pointer;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background: #C9A84C;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #C9A84C !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* 5. Right-Side Action Pill Buttons */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.btn-nav {
+  white-space: nowrap;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 9999px; /* Pill Shape */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  transform: translateY(-1.5px);
+}
+
+.btn-nav:active {
+  transform: translateY(0);
+}
+
+/* Brochure Button: Dark Glass Pill */
+.btn-brochure {
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.btn-brochure:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #C9A84C;
+  color: #ffffff;
+}
+
+/* WhatsApp Button: Vibrant Green Pill */
+.btn-whatsapp-nav {
+  background: #25D366;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  font-weight: 700;
+}
+
+.btn-whatsapp-nav:hover {
+  background: #20BD5A;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+/* 6. Hamburger Menu Button (visible on smaller screens) */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1102;
+  transition: all 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger-btn.is-active .line-1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.is-active .line-2 {
+  opacity: 0;
+}
+
+.hamburger-btn.is-active .line-3 {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 7. Mobile Drawer & Backdrop */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1090;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 85%;
+  max-width: 360px;
+  height: 100vh;
+  height: 100dvh;
+  background: #1B2A4A;
+  z-index: 1100;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.nav-drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.drawer-links {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-link {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.drawer-link:hover,
+.drawer-link.active {
+  color: #C9A84C;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding-left: 28px;
+}
+
+.drawer-actions {
+  padding: 20px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.drawer-actions .btn-nav {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 13.5px;
+  border-radius: 12px;
+}
+
+/* 8. Responsive Breakpoints */
+@media (max-width: 1280px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .header.scrolled .nav-container {
+    height: 64px;
+  }
+
+  .logo-title {
+    font-size: 16px;
+  }
+
+  .logo-tagline {
+    display: none;
+  }
+}
+
+/* 9. Floating WhatsApp Override */
+.fixed.bottom-6.right-6 {
+  z-index: 900 !important;
+}
+
+/* 10. Focus Ring for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #C9A84C;
+  outline-offset: 2px;
+}

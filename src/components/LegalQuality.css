@@ -1,0 +1,8 @@
+/* Styling for Legal and Construction Quality Section */
+.legal-card-border {
+  border-top: 4px solid #1B2A4A;
+}
+
+.quality-card-border {
+  border-top: 4px solid #C9A84C;
+}

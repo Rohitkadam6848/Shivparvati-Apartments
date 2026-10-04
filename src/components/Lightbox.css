@@ -1,0 +1,22 @@
+/* Custom styling for Lightbox component */
+.lightbox-backdrop {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.lightbox-img-container {
+  touch-action: none;
+  user-select: none;
+}
+
+.lightbox-control-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-control-btn:hover {
+  transform: scale(1.08);
+}
+
+.lightbox-control-btn:active {
+  transform: scale(0.95);
+}

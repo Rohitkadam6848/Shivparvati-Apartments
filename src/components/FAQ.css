@@ -1,0 +1,8 @@
+/* Styling for FAQ accordion component */
+.faq-accordion-item {
+  transition: background-color 0.2s ease;
+}
+
+.faq-accordion-item:hover {
+  background-color: rgba(201, 168, 76, 0.02);
+}

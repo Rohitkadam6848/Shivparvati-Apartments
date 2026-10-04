@@ -1,0 +1,109 @@
+/* Amenities Section Styling */
+.amenities-section {
+  padding-bottom: 6rem; /* Extra padding so floating WhatsApp pill never overlaps content */
+}
+
+@media (min-width: 1024px) {
+  .amenities-section {
+    padding-bottom: 7rem;
+  }
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .amenities-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.amenity-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.amenity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(27, 42, 74, 0.12), 0 8px 16px -4px rgba(27, 42, 74, 0.06);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.amenity-img-box {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F3F1EC;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.amenity-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.amenity-card:hover .amenity-img-box img {
+  transform: scale(1.05);
+}
+
+.amenity-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F9F8F5 0%, #EFECE6 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.amenity-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  color: #1B2A4A; /* Consistent royal navy brand color across all cards */
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  min-height: 2.7rem;
+  display: flex;
+  align-items: center;
+}
+
+.amenity-description {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: #4B5563;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

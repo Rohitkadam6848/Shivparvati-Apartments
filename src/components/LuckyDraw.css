@@ -1,0 +1,30 @@
+/* Styling for Lucky Draw & Offer Section */
+.lucky-draw-gradient {
+  background: radial-gradient(circle at top right, rgba(201, 168, 76, 0.25) 0%, transparent 60%),
+              linear-gradient(135deg, #10192e 0%, #1B2A4A 50%, #0c1424 100%);
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.sparkle-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: floatSparkle 4s infinite ease-in-out;
+}
+
+@keyframes floatSparkle {
+  0%, 100% {
+    transform: translateY(0px) scale(0.8) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1) rotate(180deg);
+    opacity: 0.9;
+  }
+}
