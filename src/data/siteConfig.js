@@ -6,36 +6,38 @@
  * ============================================================
  */
 
+import { SEO_CONFIG } from "./seoConfig";
+
 // ─── CORE PROJECT INFO ──────────────────────────────────────
-export const PROJECT_NAME = "Shivparvati Apartments";
+export const PROJECT_NAME = SEO_CONFIG.PROJECT_NAME_PUBLIC;
 export const PROJECT_TAGLINE = "YOUR DREAM HOME IN PUNE";
 export const PROJECT_SUBTITLE = "Premium 1 & 2 BHK residential apartments designed for comfortable modern living in Kondhwa, Pune.";
-export const PROJECT_RERA = "MahaRERA Reg. No: PR1260002601322";
+export const PROJECT_RERA = `MahaRERA Reg. No: ${SEO_CONFIG.RERA_NO}`;
 export const BROCHURE_URL = "/pdf/Binder 1.pdf";
 export const BROCHURE_FILENAME = "Shivparvati-Apartments-Brochure.pdf";
 
 // ─── BUILDER / DEVELOPER INFO ───────────────────────────────
-export const BUILDER_NAME = "Shivparvati Developers";
-export const BUILDER_DESCRIPTION = `Shivparvati Developers is dedicated to creating high-quality residential spaces that combine modern architecture, top-tier amenities, and prime connectivity in Pune. With an unyielding focus on customer satisfaction and structural excellence, Shivparvati Apartments is built to be your lifetime sanctuary.`;
+export const BUILDER_NAME = SEO_CONFIG.BUILDER_NAME_PUBLIC;
+export const BUILDER_DESCRIPTION = `${SEO_CONFIG.BUILDER_NAME_PUBLIC} is dedicated to creating high-quality residential spaces that combine modern architecture, top-tier amenities, and prime connectivity in Pune. With an unyielding focus on customer satisfaction and structural excellence, ${SEO_CONFIG.PROJECT_NAME_PUBLIC} is built to be your lifetime sanctuary.`;
 export const BUILDER_EXPERIENCE = "15+";
 export const BUILDER_COMPLETED_PROJECTS = "20+";
 export const BUILDER_HAPPY_FAMILIES = "1,500+";
 export const BUILDER_AWARDS = "8+";
 
 // ─── CONTACT INFORMATION ────────────────────────────────────
-export const WHATSAPP_NUMBER = "919623553952"; // Official WhatsApp number with country code
-export const DISPLAY_WHATSAPP = "96235 53952";
-export const PHONE_NUMBER = "+91 96235 53952";
-export const ADDITIONAL_PHONES = ["+91 98606 96699", "+91 73870 99810", "+91 98505 01536"];
-export const EMAIL = "inquiry@shivparvatidevelopers.com";
+export const WHATSAPP_NUMBER = SEO_CONFIG.PHONE_DIGITS; // Digits only for wa.me links
+export const DISPLAY_WHATSAPP = SEO_CONFIG.PHONE;
+export const PHONE_NUMBER = SEO_CONFIG.PHONE;
+export const ADDITIONAL_PHONES = [];
+export const EMAIL = SEO_CONFIG.EMAIL;
 export const OFFICE_HOURS = "Mon – Sun: 9:30 AM – 7:00 PM";
 
 // ─── ADDRESS & LOCATION ─────────────────────────────────────
 export const ADDRESS = {
-  line1: "Sr.No.49, Katraj Kondhwa Rd, Near Shivparvati Mangal Karyalaya",
-  line2: "Gokulnagar, Kondhwa Bk",
-  line3: "Pune, Maharashtra – 411046",
-  full: "Sr.No.49, Katraj Kondhwa Rd, Near Shivparvati Mangal Karyalaya, Gokulnagar, Kondhwa Bk, Pune-411046",
+  line1: SEO_CONFIG.STREET_ADDRESS,
+  line2: SEO_CONFIG.LOCALITY,
+  line3: `Pune, ${SEO_CONFIG.REGION} – ${SEO_CONFIG.POSTAL_CODE}`,
+  full: SEO_CONFIG.FULL_ADDRESS,
 };
 
 export const GOOGLE_MAPS_EMBED_URL =
@@ -45,12 +47,7 @@ export const GOOGLE_MAPS_DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=18.4635676,73.8767905";
 
 // ─── SOCIAL MEDIA ───────────────────────────────────────────
-export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com",
-  instagram: "https://instagram.com",
-  youtube: "https://youtube.com",
-  linkedin: "https://linkedin.com",
-};
+export const SOCIAL_LINKS = SEO_CONFIG.SOCIAL_LINKS;
 
 // ─── STATS STRIP ─────────────────────────────────────────────
 export const PROJECT_STATS = [

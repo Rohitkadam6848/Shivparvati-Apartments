@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shivparvatiapartments.com/sitemap.xml
+Sitemap: https://shivparvatiapartments.in/sitemap.xml
