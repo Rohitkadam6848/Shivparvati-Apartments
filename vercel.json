@@ -2,12 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.shivparvatiapartments.in"
-        }
-      ],
+      "has": [{ "type": "host", "value": "www.shivparvatiapartments.in" }],
       "destination": "https://shivparvatiapartments.in/$1",
       "permanent": true
     }
