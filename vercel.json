@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.shivparvatiapartments.in"
+        }
+      ],
+      "destination": "https://shivparvatiapartments.in/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!sitemap\\.xml|robots\\.txt|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
